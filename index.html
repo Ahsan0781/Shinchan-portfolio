@@ -604,6 +604,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .cs-mock .block.w60{width:60%;}
 .cs-mock .block.w80{width:80%;}
 .cs-mock .block.big{height:70px;border-radius:8px;background:linear-gradient(135deg, rgba(99,102,241,0.25), rgba(59,130,246,0.1));margin-top:6px;}
+.project-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--ease);
+}
+.case-study:hover .project-image{transform:scale(1.05);}
 .cs-tag{display:inline-block;font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;color:var(--accent-2);
   background:var(--accent-soft);padding:5px 12px;border-radius:100px;margin-bottom:16px;}
 .cs-copy h3{font-size:26px;margin-bottom:16px;}
@@ -982,15 +991,8 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
          <img src="zaf-holidays-screenshot.jpg" alt="..." loading="lazy">
     ============================================ -->
     <div class="case-study glass reveal">
-      <div class="cs-visual" aria-hidden="true">
-        <div class="cs-mock">
-          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-          <div class="body">
-            <div class="block w60"></div>
-            <div class="block w80"></div>
-            <div class="block big"></div>
-          </div>
-        </div>
+      <div class="cs-visual">
+        <img src="zaf-holidays.png" alt="ZAF Holidays website screenshot" class="project-image" loading="lazy">
       </div>
       <div class="cs-copy">
         <span class="cs-tag">CLIENT PROJECT — TRAVEL WEBSITE</span>
@@ -1008,15 +1010,8 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
     </div>
 
     <div class="case-study glass reveal">
-      <div class="cs-visual" aria-hidden="true">
-        <div class="cs-mock">
-          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-          <div class="body">
-            <div class="block w80"></div>
-            <div class="block w60"></div>
-            <div class="block big"></div>
-          </div>
-        </div>
+      <div class="cs-visual">
+        <img src="portfolio-preview.png" alt="Sheikh Ahsan portfolio website screenshot" class="project-image" loading="lazy">
       </div>
       <div class="cs-copy">
         <span class="cs-tag">PERSONAL PROJECT — PORTFOLIO WEBSITE</span>
