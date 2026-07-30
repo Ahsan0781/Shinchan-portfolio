@@ -265,6 +265,17 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
   transform:rotateX(52deg) rotateZ(38deg);
   transition:transform .1s linear;
   animation:float 6s ease-in-out infinite;
+  will-change:transform;
+}
+
+/* Performance: pause all decorative hero animation once it's scrolled
+   off-screen, instead of letting them run for the whole session. */
+.stack-stage.paused .stack,
+.stack-stage.paused .stack-glow,
+.stack-stage.paused .orbit-ring,
+.stack-stage.paused .particles span,
+.stack-stage.paused .stack-layer::after{
+  animation-play-state:paused;
 }
 @keyframes float{
   0%,100%{ margin-top:0px; }
@@ -426,10 +437,19 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
     radial-gradient(circle at 30% 20%, rgba(99,102,241,0.35), transparent 55%),
     radial-gradient(circle at 80% 90%, rgba(59,130,246,0.3), transparent 55%);
 }
-.avatar-mark{
+.about-photo{
+  position:relative;
   z-index:1;
-  width:38%;
-  filter:drop-shadow(0 0 24px rgba(99,102,241,0.4));
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:contrast(1.05) brightness(1.02);
+}
+.about-portrait::after{
+  content:'';
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(200deg, rgba(99,102,241,0.18), transparent 45%, rgba(10,10,12,0.35));
+  mix-blend-mode:overlay;
 }
 .float-chip{
   position:absolute;
@@ -706,6 +726,12 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
 .form-field input:focus, .form-field select:focus, .form-field textarea:focus{
   outline:none;border-color:var(--accent-2);background:rgba(255,255,255,0.05);
 }
+/* Native <option> elements ignore most parent styling and default to the
+   OS's white dropdown — set colors explicitly so text stays readable. */
+.form-field select option{
+  background:var(--bg-elevated);
+  color:var(--text-primary);
+}
 .form-field textarea{resize:vertical;min-height:110px;}
 .form-note{font-size:12.5px;color:var(--text-tertiary);margin-top:14px;}
 @media (max-width:850px){ .contact-panel{grid-template-columns:1fr;padding:32px;} .form-grid{grid-template-columns:1fr;} }
@@ -812,18 +838,8 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
   <div class="container">
     <div class="about-portrait-wrap reveal">
       <div class="about-portrait">
-        <svg class="avatar-mark" viewBox="0 0 140 140" fill="none" aria-hidden="true">
-          <circle cx="70" cy="70" r="67" stroke="url(#avatarGrad)" stroke-width="1" opacity="0.3"/>
-          <circle cx="70" cy="54" r="24" stroke="url(#avatarGrad)" stroke-width="2.6"/>
-          <path d="M27 119c0-23.7 19.3-39 43-39s43 15.3 43 39" stroke="url(#avatarGrad)" stroke-width="2.6" stroke-linecap="round"/>
-          <defs>
-            <linearGradient id="avatarGrad" x1="0" y1="0" x2="140" y2="140" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#ffffff"/>
-              <stop offset="0.55" stop-color="#a5b4fc"/>
-              <stop offset="1" stop-color="#3b82f6"/>
-            </linearGradient>
-          </defs>
-        </svg>
+        <!-- Replace src below with your own image filename any time -->
+        <img src="meee.jpg" alt="Sheikh Ahsan" class="about-photo">
       </div>
       <div class="float-chip chip-tl"><span class="chip-dot"></span>UI / UX Design</div>
       <div class="float-chip chip-br"><span class="chip-dot dot-blue"></span>Code &amp; Documents</div>
@@ -935,6 +951,14 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
       <p>A closer look at how the work actually moved the needle — not just how it looks.</p>
     </div>
 
+    <!-- ============================================
+         PROJECT CASE STUDY — one block per project.
+         To add a new project: copy everything from
+         div.case-study block down to
+         its matching closing tag (3 case studies below
+         as examples), paste the copy right below, then
+         just edit the text and cs-mock/image inside.
+    ============================================ -->
     <div class="case-study glass reveal">
       <div class="cs-visual">
         <div class="cs-mock">
@@ -1031,6 +1055,12 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
       <button class="filter-btn" data-filter="documents">Documents</button>
     </div>
     <div class="gallery-grid reveal" id="galleryGrid">
+      <!-- ============================================
+           GALLERY ITEM — copy one div.g-item block
+           (opening tag to closing tag) to add a new piece of work. Set data-cat to
+           "web", "branding", or "documents" so the filter
+           buttons above pick it up correctly.
+      ============================================ -->
       <div class="g-item" data-cat="web"><div class="g-fill" style="background:linear-gradient(150deg,#6366f1,#3b82f6);"></div><div class="g-info"><span>WEB</span><h5>Fitness Coach Website</h5></div></div>
       <div class="g-item" data-cat="branding"><div class="g-fill" style="background:linear-gradient(150deg,#3b82f6,#8b5cf6);"></div><div class="g-info"><span>BRANDING</span><h5>Cafe Logo &amp; Packaging</h5></div></div>
       <div class="g-item" data-cat="documents"><div class="g-fill" style="background:linear-gradient(150deg,#6366f1,#22d3ee);"></div><div class="g-info"><span>DOCUMENTS</span><h5>Annual Report Layout</h5></div></div>
@@ -1096,6 +1126,10 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
     </div>
     <div class="testi-track-wrap reveal">
       <div class="testi-track" id="testiTrack">
+        <!-- ============================================
+             TESTIMONIAL — copy one div.testi-card.glass block
+             (opening tag to closing tag) to add another review.
+        ============================================ -->
         <div class="testi-card glass">
           <div class="testi-stars">★★★★★</div>
           <p>"Ahsan redesigned our landing page in under a week and our signup rate genuinely improved. Communication was clear the whole way through."</p>
@@ -1204,6 +1238,10 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
       <h2>Good to know before we start.</h2>
     </div>
     <div class="faq-list reveal">
+      <!-- ============================================
+           FAQ — copy one div.faq-item block
+           (opening tag to closing tag) to add another question.
+      ============================================ -->
       <div class="faq-item open">
         <button class="faq-q">How much does a project typically cost? <span class="plus">+</span></button>
         <div class="faq-a"><p>It depends on scope — a single landing page costs less than a full multi-page website with branding. Share your requirements and I'll send a clear, itemized quote before any work begins.</p></div>
@@ -1246,15 +1284,15 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
         <p>Tell me a bit about your project and I'll get back to you within 24 hours with next steps and a clear quote.</p>
         <div class="contact-detail">
           <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.6"/><path d="M4 6l8 7 8-7" stroke="currentColor" stroke-width="1.6"/></svg></div>
-          <div><b>hello@shaikhahsan.design</b><span>Email</span></div>
+          <div><b>mraaisu07@gmail.com</b><span>Email</span></div>
         </div>
         <div class="contact-detail">
           <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012 4.2 2 2 0 014 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2.1z" stroke="currentColor" stroke-width="1.6"/></svg></div>
-          <div><b>+92 300 0000000</b><span>WhatsApp / Call</span></div>
+          <div><b>+91 7051077784</b><span>WhatsApp / Call</span></div>
         </div>
         <div class="contact-detail">
           <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.6"/></svg></div>
-          <div><b>Based in Pakistan</b><span>Working with clients worldwide</span></div>
+          <div><b>Based in India</b><span>Working with clients worldwide</span></div>
         </div>
         <div class="social-row">
           <a href="#" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="9" width="4" height="12" fill="currentColor"/><circle cx="4" cy="4" r="2" fill="currentColor"/><path d="M10 9h4v2s1.5-2.3 4.5-2.3S22 10.7 22 14.5V21h-4v-6c0-1.4-.6-2.5-2-2.5s-2 1.1-2 2.5v6h-4z" fill="currentColor"/></svg></a>
@@ -1312,7 +1350,7 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <a href="mailto:hello@shaikhahsan.design">hello@shaikhahsan.design</a>
+        <a href="mailto:mraaisu07@gmail.com">mraaisu07@gmail.com</a>
         <a href="#contact">Book a Call</a>
       </div>
     </div>
@@ -1326,15 +1364,52 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
 </footer>
 
 <script>
-// ===== NAV: scroll state + mobile toggle =====
+// ===== ELEMENT REFERENCES (grabbed once, reused everywhere below) =====
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+const heroStage = document.getElementById('heroStage');
+const heroStack = document.getElementById('heroStack');
+const stageSpotlight = document.getElementById('stageSpotlight');
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
+let baseRX = 52, baseRZ = 38;
+
+// ===== NAV: mobile toggle =====
 navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// ===== PERFORMANCE: pause hero's decorative animations once it scrolls off-screen =====
+// (This is what was causing scroll lag on desktop — animations kept running
+// and the scroll handler kept writing styles even after the hero was gone.)
+let heroInView = true;
+if(heroStage){
+  const heroVisibilityIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      heroInView = entry.isIntersecting;
+      heroStage.classList.toggle('paused', !heroInView);
+    });
+  }, {threshold: 0});
+  heroVisibilityIO.observe(heroStage);
+}
+
+// ===== SINGLE rAF-THROTTLED SCROLL HANDLER =====
+// One listener instead of several, batched with requestAnimationFrame so
+// the browser never does more than one style update per frame.
+let scrollTicking = false;
+function onScrollFrame(){
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 40);
+  if(heroStack && heroInView){
+    const scrollProgress = Math.min(y / 900, 1);
+    heroStack.style.transform = `rotateX(${baseRX - scrollProgress*20}deg) rotateZ(${baseRZ + scrollProgress*70}deg)`;
+  }
+  scrollTicking = false;
+}
+window.addEventListener('scroll', () => {
+  if(!scrollTicking){
+    requestAnimationFrame(onScrollFrame);
+    scrollTicking = true;
+  }
+}, {passive:true});
 
 // ===== REVEAL ON SCROLL =====
 const revealEls = document.querySelectorAll('.reveal, .t-step, .service-card, .g-item, .case-study');
@@ -1370,22 +1445,27 @@ const counterIO = new IntersectionObserver((entries) => {
 }, {threshold:0.5});
 counters.forEach(c => counterIO.observe(c));
 
-// ===== HERO 3D STACK: mouse parallax + scroll-driven rotation =====
-const heroStage = document.getElementById('heroStage');
-const heroStack = document.getElementById('heroStack');
-const stageSpotlight = document.getElementById('stageSpotlight');
-let baseRX = 52, baseRZ = 38;
+// ===== HERO 3D STACK: mouse parallax (rAF-throttled) =====
 if(heroStage){
+  let mouseTicking = false;
+  let lastEvent = null;
   heroStage.addEventListener('mousemove', (e) => {
-    const rect = heroStage.getBoundingClientRect();
-    const x = (e.clientX - rect.left)/rect.width - 0.5;
-    const y = (e.clientY - rect.top)/rect.height - 0.5;
-    heroStack.style.transform = `rotateX(${baseRX - y*18}deg) rotateZ(${baseRZ + x*22}deg)`;
-    if(stageSpotlight){
-      stageSpotlight.style.setProperty('--mx', ((x+0.5)*100) + '%');
-      stageSpotlight.style.setProperty('--my', ((y+0.5)*100) + '%');
+    lastEvent = e;
+    if(!mouseTicking){
+      requestAnimationFrame(() => {
+        const rect = heroStage.getBoundingClientRect();
+        const x = (lastEvent.clientX - rect.left)/rect.width - 0.5;
+        const y = (lastEvent.clientY - rect.top)/rect.height - 0.5;
+        heroStack.style.transform = `rotateX(${baseRX - y*18}deg) rotateZ(${baseRZ + x*22}deg)`;
+        if(stageSpotlight){
+          stageSpotlight.style.setProperty('--mx', ((x+0.5)*100) + '%');
+          stageSpotlight.style.setProperty('--my', ((y+0.5)*100) + '%');
+        }
+        mouseTicking = false;
+      });
+      mouseTicking = true;
     }
-  });
+  }, {passive:true});
   heroStage.addEventListener('mouseleave', () => {
     heroStack.style.transform = `rotateX(${baseRX}deg) rotateZ(${baseRZ}deg)`;
   });
@@ -1404,11 +1484,6 @@ if(particleField){
     particleField.appendChild(p);
   }
 }
-window.addEventListener('scroll', () => {
-  if(!heroStack) return;
-  const scrollProgress = Math.min(window.scrollY / 900, 1);
-  heroStack.style.transform = `rotateX(${baseRX - scrollProgress*20}deg) rotateZ(${baseRZ + scrollProgress*70}deg)`;
-});
 
 // ===== GALLERY FILTER =====
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -1514,7 +1589,7 @@ contactForm.addEventListener('submit', (e) => {
     }).catch(() => { /* non-critical, ignore */ });
   })
   .catch(() => {
-    formNote.textContent = "Something went wrong sending that. Please email hello@shaikhahsan.design directly.";
+    formNote.textContent = "Something went wrong sending that. Please email mraaisu07@gmail.com directly.";
     formNote.style.color = '#f87171';
   });
 });
