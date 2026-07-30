@@ -3,11 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sheikh Ahsan — Freelance Web &amp; Landing Page Designer, Graphic Designer, Document Specialist</title>
-<meta name="description" content="Sheikh Ahsan is a freelance web designer, landing page developer, graphic designer, and document formatting specialist helping businesses and startups build digital experiences that convert.">
+<title>Sheikh Ahsan — Freelance Web Developer, Graphic Designer &amp; Document Specialist</title>
+<meta name="description" content="Sheikh Ahsan is a freelance web developer offering website development, landing pages, graphic design, MS Office document services, PDF editing, and resume/CV design for businesses and professionals worldwide.">
+<link rel="canonical" href="https://sheikhahsan.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sheikh Ahsan — Freelance Web Developer, Graphic Designer &amp; Document Specialist">
+<meta property="og:description" content="Website development, landing pages, graphic design, MS Office services, PDF editing, and resume/CV design — delivered by one dependable freelancer.">
+<meta property="og:image" content="https://sheikhahsan.com/Meee.jpeg">
+<meta property="og:url" content="https://sheikhahsan.com/">
+<meta property="og:site_name" content="Sheikh Ahsan">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sheikh Ahsan — Freelance Web Developer, Graphic Designer &amp; Document Specialist">
+<meta name="twitter:description" content="Website development, landing pages, graphic design, MS Office services, PDF editing, and resume/CV design — delivered by one dependable freelancer.">
+<meta name="twitter:image" content="https://sheikhahsan.com/Meee.jpeg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Schema.org Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sheikh Ahsan",
+  "jobTitle": "Freelance Web Developer &amp; Graphic Designer",
+  "email": "mailto:mraaisu07@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN"
+  },
+  "knowsAbout": ["Website Development", "Landing Page Development", "Graphic Design", "MS Office Services", "PDF Editing", "Resume Design"]
+}
+</script>
 <style>
 /* ============================================
    TOKENS
@@ -183,7 +216,10 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
 .logo span{color:var(--accent);}
 .nav-links{display:flex;gap:34px;align-items:center;}
 .nav-links a{font-size:14.5px;color:var(--text-secondary);font-weight:500;transition:color .25s;position:relative;}
-.nav-links a:hover{color:var(--text-primary);}
+.nav-links a:hover, .nav-links a.active{color:var(--text-primary);}
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+  outline:2px solid var(--accent-2);outline-offset:3px;border-radius:4px;
+}
 .nav-cta{display:flex;align-items:center;gap:20px;}
 .nav-toggle{display:none;width:40px;height:40px;align-items:center;justify-content:center;}
 .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
@@ -522,7 +558,7 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
   display:flex;align-items:center;justify-content:center;
   margin-bottom:20px;color:var(--accent-2);
 }
-.service-card h4{font-size:18px;margin-bottom:8px;}
+.service-card h3{font-size:18px;margin-bottom:8px;}
 .service-card p{font-size:14.5px;color:var(--text-secondary);}
 @media (max-width:900px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
 @media (max-width:600px){ .services-grid{grid-template-columns:1fr;} }
@@ -575,6 +611,10 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
 .cs-results{display:flex;gap:28px;margin-top:22px;}
 .cs-results .r b{display:block;font-family:var(--font-display);font-size:22px;color:var(--accent-2);}
 .cs-results .r span{font-size:12.5px;color:var(--text-tertiary);}
+.cs-tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.cs-tech span{padding:6px 13px;border-radius:100px;font-size:12.5px;background:var(--glass);border:1px solid var(--border);color:var(--text-secondary);}
+.cs-links{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;}
+.cs-links .btn{padding:11px 22px;font-size:13.5px;}
 @media (max-width:850px){
   .case-study, .case-study:nth-child(even){grid-template-columns:1fr;padding:28px;}
   .case-study:nth-child(even) .cs-visual{order:0;}
@@ -612,7 +652,7 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
    SKILLS
 ============================================ */
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.skill-block h4{font-family:var(--font-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-2);margin-bottom:20px;}
+.skill-block h3{font-family:var(--font-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-2);margin-bottom:20px;}
 .skill-chips{display:flex;flex-wrap:wrap;gap:10px;}
 .skill-chip{
   padding:9px 16px;border-radius:100px;font-size:13.5px;
@@ -648,6 +688,8 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
 .testi-dot.active{background:var(--accent-2);width:22px;border-radius:4px;}
 @media (max-width:900px){ .testi-card{min-width:calc(50% - 12px);} }
 @media (max-width:600px){ .testi-card{min-width:100%;} }
+.testi-empty{padding:56px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px;}
+.testi-empty p{color:var(--text-secondary);font-size:16px;max-width:520px;}
 
 /* ============================================
    PROCESS TIMELINE
@@ -667,7 +709,7 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
   transition:border-color .4s, box-shadow .4s;
 }
 .t-step.in .t-num{border-color:var(--accent-2);box-shadow:0 0 0 6px rgba(99,102,241,0.12);}
-.t-copy h4{font-size:19px;margin-bottom:8px;padding-top:10px;}
+.t-copy h3{font-size:19px;margin-bottom:8px;padding-top:10px;}
 .t-copy p{color:var(--text-secondary);font-size:14.5px;max-width:520px;}
 
 /* ============================================
@@ -676,7 +718,7 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .why-card{padding:30px 26px;}
 .why-card svg{color:var(--accent-2);margin-bottom:16px;}
-.why-card h4{font-size:16.5px;margin-bottom:8px;}
+.why-card h3{font-size:16.5px;margin-bottom:8px;}
 .why-card p{font-size:14px;color:var(--text-secondary);}
 @media (max-width:900px){ .why-grid{grid-template-columns:repeat(2,1fr);} }
 @media (max-width:600px){ .why-grid{grid-template-columns:1fr;} }
@@ -699,7 +741,7 @@ h2{font-size:clamp(2rem, 3.6vw, 3rem);}
    CONTACT
 ============================================ */
 .contact-panel{padding:56px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;}
-.contact-info h3{font-size:24px;margin-bottom:16px;}
+.contact-info h2{font-size:24px;margin-bottom:16px;}
 .contact-info p{color:var(--text-secondary);margin-bottom:28px;font-size:15px;}
 .contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
 .contact-detail .ic{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent-2);flex-shrink:0;}
@@ -759,9 +801,9 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
 <body>
 
 <!-- ============================================ NAV ============================================ -->
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" aria-label="Primary">
   <div class="container">
-    <a href="#" class="logo">Sheikh Ahsan<span>.</span></a>
+    <a href="#" class="logo" aria-label="Sheikh Ahsan — home">Sheikh Ahsan<span>.</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -773,7 +815,7 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
     </ul>
     <div class="nav-cta">
       <a href="#contact" class="btn btn-primary">Let's Talk</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
     </div>
   </div>
 </nav>
@@ -786,16 +828,16 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
       <h1>I Design Digital Experiences That <span class="grad">Grow Businesses.</span></h1>
       <p>I help businesses, startups, and professionals create modern websites, landing pages, branding, graphics, and business documents that leave a lasting impression — and turn visitors into clients.</p>
       <div class="hero-ctas">
-        <a href="#work" class="btn btn-primary">
-          View My Work
+        <a href="#contact" class="btn btn-primary">
+          Get a Free Quote
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#contact" class="btn btn-ghost">Book a Free Call</a>
+        <a href="#work" class="btn btn-ghost">View My Work</a>
       </div>
       <div class="hero-meta">
-        <div class="m-item"><b class="counter" data-target="60">0</b><span>PROJECTS DELIVERED</span></div>
-        <div class="m-item"><b class="counter" data-target="45">0</b><span>HAPPY CLIENTS</span></div>
-        <div class="m-item"><b class="counter" data-target="4">0</b><span>YEARS EXPERIENCE</span></div>
+        <div class="m-item"><b>Responsive</b><span>DESIGN &amp; LAYOUT</span></div>
+        <div class="m-item"><b>Clean</b><span>CODE</span></div>
+        <div class="m-item"><b>Fast</b><span>DELIVERY</span></div>
       </div>
     </div>
     <div class="stack-stage" id="heroStage">
@@ -823,32 +865,33 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
   <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
 </header>
 
+<main>
+
 <!-- ============================================ STATS STRIP ============================================ -->
-<section class="stats-strip" style="padding:48px 0;">
+<section class="stats-strip" style="padding:48px 0;" aria-label="Key strengths">
   <div class="container">
-    <div class="stat"><b class="counter" data-target="98">0</b><span>% CLIENT SATISFACTION</span></div>
-    <div class="stat"><b class="counter" data-target="72">0</b><span>HOUR AVG. TURNAROUND</span></div>
-    <div class="stat"><b class="counter" data-target="12">0</b><span>SERVICES OFFERED</span></div>
-    <div class="stat"><b class="counter" data-target="24">0</b><span>HR RESPONSE TIME</span></div>
+    <div class="stat"><b>Responsive</b><span>DESIGN</span></div>
+    <div class="stat"><b>Fast</b><span>DELIVERY</span></div>
+    <div class="stat"><b>Clean</b><span>CODE</span></div>
+    <div class="stat"><b>Modern</b><span>UI</span></div>
   </div>
 </section>
 
 <!-- ============================================ ABOUT ============================================ -->
-<section id="about" class="about">
+<section id="about" aria-labelledby="about-heading">
   <div class="container">
     <div class="about-portrait-wrap reveal">
       <div class="about-portrait">
         <!-- Replace src below with your own image filename any time -->
-        <img src="Meee.jpeg" alt="Sheikh Ahsan" class="about-photo">
+        <img src="Meee.jpeg" alt="Portrait of Sheikh Ahsan, freelance web developer and designer" class="about-photo" width="800" height="1326" loading="lazy" decoding="async">
       </div>
       <div class="float-chip chip-tl"><span class="chip-dot"></span>UI / UX Design</div>
       <div class="float-chip chip-br"><span class="chip-dot dot-blue"></span>Code &amp; Documents</div>
     </div>
     <div class="about-copy reveal">
       <p class="eyebrow">About Me</p>
-      <h2>Design &amp; documents, handled by one dependable freelancer.</h2>
-      <p>I'm Sheikh Ahsan, a freelance web designer, landing page developer, graphic designer, and document formatting specialist. For the past several years I've partnered with founders, agencies, and professionals who need their digital presence — and their paperwork — to look as sharp as the work they do.</p>
-      <p>What makes my process different is range: I don't just hand you a homepage and disappear. I design the website, build the landing page that converts, create the brand assets around it, and format the business documents that back it up — resumes, proposals, fillable PDF forms — all under one roof, with one point of contact.</p>
+      <h2 id="about-heading">Design &amp; documents, handled by one dependable freelancer.</h2>
+      <p>I'm a web developer and designer focused on building clean, responsive websites and digital solutions that help businesses establish a strong online presence. Alongside website development, I also provide graphic design, document formatting, PDF editing, and professional resume services. My goal is to deliver reliable, user-friendly, and visually appealing work that creates real value for clients.</p>
       <ul class="about-list">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Direct communication, no account managers</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Design + development + documents in one hire</li>
@@ -860,82 +903,45 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
 </section>
 
 <!-- ============================================ SERVICES ============================================ -->
-<section id="services">
+<section id="services" aria-labelledby="services-heading">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">My Services</p>
-      <h2>Everything your brand needs to look credible.</h2>
-      <p>Twelve services across two disciplines, so your website and your paperwork are speaking the same visual language.</p>
+      <h2 id="services-heading">Everything your brand needs to look credible.</h2>
+      <p>Six core services spanning web, design, and documents, so your website and your paperwork are speaking the same visual language.</p>
     </div>
 
     <div class="services-group reveal">
-      <h3>Design &amp; Development</h3>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.8"/></svg></div>
-          <h4>Website Design</h4>
-          <p>Full multi-page websites designed around your brand and your customer's decision path.</p>
+          <h3>Website Development</h3>
+          <p>Responsive, modern websites for businesses, portfolios, agencies, and personal brands.</p>
         </div>
         <div class="service-card">
           <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M14 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h4>Landing Page Design</h4>
-          <p>Single-purpose pages built to convert traffic into leads, signups, or sales.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 18h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          <h4>Responsive Web Development</h4>
-          <p>Pixel-accurate builds that work flawlessly across desktop, tablet, and mobile.</p>
+          <h3>Landing Page Development</h3>
+          <p>High-converting landing pages focused on products, services, marketing campaigns, and lead generation.</p>
         </div>
         <div class="service-card">
           <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M9 9h6v6H9z" stroke="currentColor" stroke-width="1.8"/></svg></div>
-          <h4>Graphic Design</h4>
-          <p>Visual assets for print and digital — banners, ads, brochures, and marketing collateral.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-          <h4>Logo Design</h4>
-          <p>Distinct, versatile marks that hold up from a favicon to a billboard.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="12" r="1.6" fill="currentColor"/><path d="M12 10h7M12 14h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-          <h4>Business Card Design</h4>
-          <p>Print-ready cards that feel like the first line of a bigger brand story.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg></div>
-          <h4>Social Media Designs</h4>
-          <p>On-brand post templates, covers, and story graphics ready to schedule.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="services-group reveal">
-      <h3>Documents &amp; Word Expertise</h3>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9l-6-6z" stroke="currentColor" stroke-width="1.8"/><path d="M14 3v6h6" stroke="currentColor" stroke-width="1.8"/></svg></div>
-          <h4>PDF to Word Conversion</h4>
-          <p>Accurate, fully editable conversions that preserve original layout and formatting.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-          <h4>Document Formatting</h4>
-          <p>Clean, consistent formatting for reports, proposals, manuscripts, and manuals.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="7.5" y="8" width="4" height="2" rx="0.5" stroke="currentColor" stroke-width="1.4"/><path d="M7.5 14h9M7.5 17h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
-          <h4>Fillable PDF Forms</h4>
-          <p>Interactive forms with fields, checkboxes, and validation, ready to send or embed.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke="currentColor" stroke-width="1.8"/></svg></div>
-          <h4>Resume Design</h4>
-          <p>ATS-friendly resumes that are still genuinely nice to look at.</p>
+          <h3>Graphic Design</h3>
+          <p>Professional logos, banners, social media posts, business cards, brochures, and branding assets.</p>
         </div>
         <div class="service-card">
           <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-          <h4>Microsoft Word Expert Services</h4>
-          <p>Templates, styles, mail merges, TOCs, macros — the Word features most people never touch.</p>
+          <h3>MS Office Services</h3>
+          <p>Professional Word documents, Excel spreadsheets, PowerPoint presentations, reports, and business documents.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9l-6-6z" stroke="currentColor" stroke-width="1.8"/><path d="M14 3v6h6" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <h3>PDF Editing &amp; Formatting</h3>
+          <p>PDF conversion, editing, formatting, merging, splitting, and professional document preparation.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke="currentColor" stroke-width="1.8"/></svg></div>
+          <h3>Resume &amp; CV Design</h3>
+          <p>Modern ATS-friendly resumes and CVs designed to improve job application success.</p>
         </div>
       </div>
     </div>
@@ -943,11 +949,11 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
 </section>
 
 <!-- ============================================ FEATURED PROJECTS ============================================ -->
-<section id="work">
+<section id="work" aria-labelledby="work-heading">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Featured Projects</p>
-      <h2>Real problems, designed solutions.</h2>
+      <h2 id="work-heading">Real problems, designed solutions.</h2>
       <p>A closer look at how the work actually moved the needle — not just how it looks.</p>
     </div>
 
@@ -960,7 +966,7 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
          just edit the text and cs-mock/image inside.
     ============================================ -->
     <div class="case-study glass reveal">
-      <div class="cs-visual">
+      <div class="cs-visual" aria-hidden="true">
         <div class="cs-mock">
           <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
           <div class="body">
@@ -983,11 +989,17 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
           <div class="r"><b>1.8s</b><span>LOAD TIME</span></div>
           <div class="r"><b>-38%</b><span>BOUNCE RATE</span></div>
         </div>
+        <div class="cs-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+        <!-- Replace the # links below with your real live demo and repo URLs -->
+        <div class="cs-links">
+          <a href="#" class="btn btn-primary">Live Demo</a>
+          <a href="#" class="btn btn-ghost">GitHub</a>
+        </div>
       </div>
     </div>
 
     <div class="case-study glass reveal">
-      <div class="cs-visual">
+      <div class="cs-visual" aria-hidden="true">
         <div class="cs-mock">
           <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
           <div class="body">
@@ -1010,11 +1022,17 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
           <div class="r"><b>12</b><span>PAGES DESIGNED</span></div>
           <div class="r"><b>4wk</b><span>TURNAROUND</span></div>
         </div>
+        <div class="cs-tech"><span>Figma</span><span>Webflow</span><span>Adobe Illustrator</span></div>
+        <!-- Replace the # links below with your real live demo and repo URLs -->
+        <div class="cs-links">
+          <a href="#" class="btn btn-primary">Live Demo</a>
+          <a href="#" class="btn btn-ghost">GitHub</a>
+        </div>
       </div>
     </div>
 
     <div class="case-study glass reveal">
-      <div class="cs-visual">
+      <div class="cs-visual" aria-hidden="true">
         <div class="cs-mock">
           <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
           <div class="body">
@@ -1036,17 +1054,23 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
           <div class="r"><b>6hr → 20min</b><span>PER PROPOSAL</span></div>
           <div class="r"><b>100%</b><span>BRAND CONSISTENT</span></div>
         </div>
+        <div class="cs-tech"><span>Microsoft Word</span><span>Adobe Acrobat</span><span>Mail Merge</span></div>
+        <!-- Replace the # links below with your real live demo and repo URLs -->
+        <div class="cs-links">
+          <a href="#" class="btn btn-primary">Live Demo</a>
+          <a href="#" class="btn btn-ghost">GitHub</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================ PORTFOLIO GALLERY ============================================ -->
-<section id="gallery">
+<section id="gallery" aria-labelledby="gallery-heading">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Portfolio Gallery</p>
-      <h2>A broader look at recent work.</h2>
+      <h2 id="gallery-heading">A broader look at recent work.</h2>
     </div>
     <div class="gallery-filters reveal">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -1075,15 +1099,15 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
 </section>
 
 <!-- ============================================ SKILLS ============================================ -->
-<section id="skills">
+<section id="skills" aria-labelledby="skills-heading">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Skills &amp; Technologies</p>
-      <h2>Tools I use to get it done right.</h2>
+      <h2 id="skills-heading">Tools I use to get it done right.</h2>
     </div>
     <div class="skills-grid reveal">
       <div class="skill-block">
-        <h4>Design</h4>
+        <h3>Design</h3>
         <div class="skill-chips">
           <span class="skill-chip">Figma</span>
           <span class="skill-chip">Adobe Photoshop</span>
@@ -1093,7 +1117,7 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
         </div>
       </div>
       <div class="skill-block">
-        <h4>Development</h4>
+        <h3>Development</h3>
         <div class="skill-chips">
           <span class="skill-chip">HTML5</span>
           <span class="skill-chip">CSS3 / Sass</span>
@@ -1103,7 +1127,7 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
         </div>
       </div>
       <div class="skill-block">
-        <h4>Documents</h4>
+        <h3>Documents</h3>
         <div class="skill-chips">
           <span class="skill-chip">Microsoft Word</span>
           <span class="skill-chip">Adobe Acrobat</span>
@@ -1117,113 +1141,83 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
 </section>
 
 <!-- ============================================ TESTIMONIALS ============================================ -->
-<section id="testimonials">
+<section id="testimonials" aria-labelledby="testimonials-heading">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Client Testimonials</p>
-      <h2>What clients say after working together.</h2>
-      <p style="font-size:13px;">Placeholder quotes — swap in your real client feedback before publishing.</p>
+      <h2 id="testimonials-heading">What clients say after working together.</h2>
     </div>
-    <div class="testi-track-wrap reveal">
-      <div class="testi-track" id="testiTrack">
-        <!-- ============================================
-             TESTIMONIAL — copy one div.testi-card.glass block
-             (opening tag to closing tag) to add another review.
-        ============================================ -->
-        <div class="testi-card glass">
-          <div class="testi-stars">★★★★★</div>
-          <p>"Ahsan redesigned our landing page in under a week and our signup rate genuinely improved. Communication was clear the whole way through."</p>
-          <div class="testi-who"><div class="testi-avatar">MK</div><div><b>M. Khan</b><span>Startup Founder</span></div></div>
-        </div>
-        <div class="testi-card glass">
-          <div class="testi-stars">★★★★★</div>
-          <p>"He reformatted three years of messy reports into one clean Word template. It's saved our team hours every single month."</p>
-          <div class="testi-who"><div class="testi-avatar">RS</div><div><b>R. Sharma</b><span>Agency Owner</span></div></div>
-        </div>
-        <div class="testi-card glass">
-          <div class="testi-stars">★★★★★</div>
-          <p>"Professional, fast, and genuinely good taste. Our new brand identity finally feels like us."</p>
-          <div class="testi-who"><div class="testi-avatar">JD</div><div><b>J. D'Souza</b><span>Studio Director</span></div></div>
-        </div>
-        <div class="testi-card glass">
-          <div class="testi-stars">★★★★★</div>
-          <p>"The fillable PDF forms he built for our onboarding cut our admin time in half. Small detail, huge impact."</p>
-          <div class="testi-who"><div class="testi-avatar">AL</div><div><b>A. Lewis</b><span>Operations Lead</span></div></div>
-        </div>
-      </div>
+    <div class="testi-empty glass reveal">
+      <p>Currently accepting new freelance projects. Your project could be the next success story featured here.</p>
+      <a href="#contact" class="btn btn-primary">Start Your Project</a>
     </div>
-    <div class="testi-controls" id="testiControls"></div>
   </div>
 </section>
 
 <!-- ============================================ WORK PROCESS ============================================ -->
-<section id="process">
+<section id="process" aria-labelledby="process-heading">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Work Process</p>
-      <h2>How a project actually unfolds.</h2>
+      <h2 id="process-heading">How a project actually unfolds.</h2>
     </div>
     <div class="timeline">
       <div class="t-step reveal">
         <div class="t-num">01</div>
-        <div class="t-copy"><h4>Discover</h4><p>A short call to understand your goals, audience, and what "done well" looks like for your project.</p></div>
+        <div class="t-copy"><h3>Discussion</h3><p>A short call to understand your goals, audience, and what "done well" looks like for your project.</p></div>
       </div>
       <div class="t-step reveal">
         <div class="t-num">02</div>
-        <div class="t-copy"><h4>Design</h4><p>Wireframes and visual concepts, refined with your feedback before a single line of code is written.</p></div>
+        <div class="t-copy"><h3>Planning</h3><p>Scope, timeline, and requirements mapped out so both of us know exactly what's being delivered.</p></div>
       </div>
       <div class="t-step reveal">
         <div class="t-num">03</div>
-        <div class="t-copy"><h4>Develop</h4><p>Responsive build across desktop, tablet, and mobile, tested for speed and accessibility.</p></div>
+        <div class="t-copy"><h3>Design &amp; Development</h3><p>Wireframes, visual design, and a responsive build, refined with your feedback along the way.</p></div>
       </div>
       <div class="t-step reveal">
         <div class="t-num">04</div>
-        <div class="t-copy"><h4>Deliver</h4><p>Final files, source assets, and documents handed over, formatted and organized.</p></div>
-      </div>
-      <div class="t-step reveal">
-        <div class="t-num">05</div>
-        <div class="t-copy"><h4>Support</h4><p>A window of free revisions plus ongoing availability for future updates.</p></div>
+        <div class="t-copy"><h3>Delivery &amp; Support</h3><p>Final files handed over, formatted and organized, with ongoing availability for updates afterward.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================ WHY CHOOSE ME ============================================ -->
-<section id="why">
+<section id="why" aria-labelledby="why-heading">
   <div class="container">
     <div class="section-head reveal">
       <p class="eyebrow">Why Choose Me</p>
-      <h2>What working together actually feels like.</h2>
+      <h2 id="why-heading">What working together actually feels like.</h2>
     </div>
     <div class="why-grid reveal">
       <div class="why-card glass">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-        <h4>Fast Turnaround</h4>
+        <h3>Fast Turnaround</h3>
         <p>Most landing pages ship within a week — without cutting corners.</p>
       </div>
       <div class="why-card glass">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M2 21c0-3.9 3.1-6.5 7-6.5s7 2.6 7 6.5M17 8l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <h4>Direct Communication</h4>
+        <h3>Direct Communication</h3>
         <p>You talk to me, not an account manager. No middlemen, no delays.</p>
       </div>
       <div class="why-card glass">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="1.8"/></svg>
-        <h4>Pixel-Perfect Detail</h4>
+        <h3>Pixel-Perfect Detail</h3>
         <p>Spacing, alignment, and type are checked obsessively before delivery.</p>
       </div>
       <div class="why-card glass">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 19V5a2 2 0 012-2h8l6 6v10a2 2 0 01-2 2H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-        <h4>Design + Documents in One</h4>
+        <h3>Design + Documents in One</h3>
         <p>One freelancer for your site, your brand, and your paperwork.</p>
       </div>
       <div class="why-card glass">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21 12a9 9 0 11-3.5-7.1M21 4v5h-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h4>Included Revisions</h4>
+        <h3>Included Revisions</h3>
         <p>Every project includes rounds of revisions until you're satisfied.</p>
       </div>
       <div class="why-card glass">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3M12 22a10 10 0 100-20 10 10 0 000 20z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h4>Ongoing Support</h4>
+        <h3>Ongoing Support</h3>
         <p>Available after delivery for updates, tweaks, and new requests.</p>
       </div>
     </div>
@@ -1231,11 +1225,11 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
 </section>
 
 <!-- ============================================ FAQ ============================================ -->
-<section id="faq">
+<section id="faq" aria-labelledby="faq-heading">
   <div class="container">
     <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
       <p class="eyebrow" style="justify-content:center;">Frequently Asked Questions</p>
-      <h2>Good to know before we start.</h2>
+      <h2 id="faq-heading">Good to know before we start.</h2>
     </div>
     <div class="faq-list reveal">
       <!-- ============================================
@@ -1243,45 +1237,45 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
            (opening tag to closing tag) to add another question.
       ============================================ -->
       <div class="faq-item open">
-        <button class="faq-q">How much does a project typically cost? <span class="plus">+</span></button>
-        <div class="faq-a"><p>It depends on scope — a single landing page costs less than a full multi-page website with branding. Share your requirements and I'll send a clear, itemized quote before any work begins.</p></div>
+        <button class="faq-q" id="faq-q-1" aria-expanded="true" aria-controls="faq-a-1">How much does a project typically cost? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1"><p>It depends on scope — a single landing page costs less than a full multi-page website with branding. Share your requirements and I'll send a clear, itemized quote before any work begins.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">How long will my project take? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Landing pages usually take 5–7 days, full websites 2–4 weeks, and document formatting jobs 1–3 days, depending on complexity and how quickly feedback comes back.</p></div>
+        <button class="faq-q" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">How long will my project take? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2"><p>Landing pages usually take 5–7 days, full websites 2–4 weeks, and document formatting jobs 1–3 days, depending on complexity and how quickly feedback comes back.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Do you only build websites, or also handle documents? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Both. Alongside web and graphic design, I specialize in Word document formatting, PDF-to-Word conversion, and building fillable PDF forms — often for the same clients.</p></div>
+        <button class="faq-q" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">Do you only build websites, or also handle documents? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3"><p>Both. Alongside web and graphic design, I specialize in Word document formatting, PDF-to-Word conversion, and building fillable PDF forms — often for the same clients.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">How many revisions are included? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Every project includes a set number of revision rounds up front, and I'll always work with you until the result matches what we agreed on.</p></div>
+        <button class="faq-q" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">How many revisions are included? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4"><p>Every project includes a set number of revision rounds up front, and I'll always work with you until the result matches what we agreed on.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Will I own the final files? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Yes. Once the project is complete and paid for, you receive full ownership of all source files, assets, and documents.</p></div>
+        <button class="faq-q" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5">Will I own the final files? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5"><p>Yes. Once the project is complete and paid for, you receive full ownership of all source files, assets, and documents.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Can you work with my existing brand guidelines? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Absolutely — if you already have brand colors, fonts, or a style guide, I'll design within them rather than starting from scratch.</p></div>
+        <button class="faq-q" id="faq-q-6" aria-expanded="false" aria-controls="faq-a-6">Can you work with my existing brand guidelines? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-6" role="region" aria-labelledby="faq-q-6"><p>Absolutely — if you already have brand colors, fonts, or a style guide, I'll design within them rather than starting from scratch.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Do you offer ongoing support after delivery? <span class="plus">+</span></button>
-        <div class="faq-a"><p>Yes, I'm available for updates, small tweaks, and future projects — many clients come back for recurring document or design work.</p></div>
+        <button class="faq-q" id="faq-q-7" aria-expanded="false" aria-controls="faq-a-7">Do you offer ongoing support after delivery? <span class="plus">+</span></button>
+        <div class="faq-a" id="faq-a-7" role="region" aria-labelledby="faq-q-7"><p>Yes, I'm available for updates, small tweaks, and future projects — many clients come back for recurring document or design work.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================ CONTACT ============================================ -->
-<section id="contact">
+<section id="contact" aria-labelledby="contact-heading">
   <div class="container">
     <div class="contact-panel glass reveal">
       <div class="contact-info">
         <p class="eyebrow">Get In Touch</p>
-        <h3>Let's build something that grows your business.</h3>
-        <p>Tell me a bit about your project and I'll get back to you within 24 hours with next steps and a clear quote.</p>
+        <h2 id="contact-heading">Let's Build Something Great Together</h2>
+        <p>Whether you need a business website, landing page, graphic design, resume, or document services, I'd be happy to help.</p>
         <div class="contact-detail">
           <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.6"/><path d="M4 6l8 7 8-7" stroke="currentColor" stroke-width="1.6"/></svg></div>
           <div><b>mraaisu07@gmail.com</b><span>Email</span></div>
@@ -1319,12 +1313,14 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
           </div>
           <div class="form-field full"><label for="msg">Message</label><textarea id="msg" name="message" placeholder="Tell me about your project, timeline, and budget."></textarea></div>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message</button>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Request a Free Quote</button>
         <p class="form-note" id="formNote">Submissions are sent straight to your Netlify dashboard and email — no backend needed.</p>
       </form>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ============================================ FOOTER ============================================ -->
 <footer>
@@ -1332,7 +1328,8 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#" class="logo">Sheikh Ahsan<span>.</span></a>
-        <p>Freelance web designer, landing page developer, graphic designer, and document formatting specialist.</p>
+        <p>Freelance web developer, graphic designer, and document formatting specialist.</p>
+        <p>Available for freelance projects worldwide.</p>
       </div>
       <div class="footer-col">
         <h5>Navigate</h5>
@@ -1343,15 +1340,18 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border);}
       </div>
       <div class="footer-col">
         <h5>Services</h5>
-        <a href="#services">Website Design</a>
+        <a href="#services">Website Development</a>
         <a href="#services">Graphic Design</a>
-        <a href="#services">Document Formatting</a>
-        <a href="#services">Resume Design</a>
+        <a href="#services">MS Office Services</a>
+        <a href="#services">Resume &amp; CV Design</a>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <a href="mailto:mraaisu07@gmail.com">mraaisu07@gmail.com</a>
-        <a href="#contact">Book a Call</a>
+        <a href="mailto:mraaisu07@gmail.com">Email</a>
+        <a href="https://wa.me/917051077784" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <!-- Replace # with your real GitHub and LinkedIn profile URLs -->
+        <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1374,8 +1374,31 @@ const navLinks = document.getElementById('navLinks');
 let baseRX = 52, baseRZ = 38;
 
 // ===== NAV: mobile toggle =====
-navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+navToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen);
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}));
+
+// ===== NAV: active link on scroll (scrollspy) =====
+const navAnchorLinks = [...navLinks.querySelectorAll('a[href^="#"]')];
+const spySections = navAnchorLinks
+  .map(a => document.querySelector(a.getAttribute('href')))
+  .filter(Boolean);
+if(spySections.length){
+  const spyIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const id = '#' + entry.target.id;
+        navAnchorLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+      }
+    });
+  }, {rootMargin: '-45% 0px -50% 0px'});
+  spySections.forEach(s => spyIO.observe(s));
+}
 
 // ===== PERFORMANCE: pause hero's decorative animations once it scrolls off-screen =====
 // (This is what was causing scroll lag on desktop — animations kept running
@@ -1423,27 +1446,6 @@ const io = new IntersectionObserver((entries) => {
   });
 }, {threshold:0.15});
 revealEls.forEach(el => io.observe(el));
-
-// ===== ANIMATED COUNTERS =====
-const counters = document.querySelectorAll('.counter');
-const counterIO = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      const el = entry.target;
-      const target = parseInt(el.dataset.target, 10);
-      let cur = 0;
-      const step = Math.max(1, Math.ceil(target/60));
-      const tick = () => {
-        cur += step;
-        if(cur >= target){ el.textContent = target; }
-        else { el.textContent = cur; requestAnimationFrame(tick); }
-      };
-      tick();
-      counterIO.unobserve(el);
-    }
-  });
-}, {threshold:0.5});
-counters.forEach(c => counterIO.observe(c));
 
 // ===== HERO 3D STACK: mouse parallax (rAF-throttled) =====
 if(heroStage){
@@ -1499,35 +1501,6 @@ filterBtns.forEach(btn => {
   });
 });
 
-// ===== TESTIMONIALS CAROUSEL =====
-const testiTrack = document.getElementById('testiTrack');
-const testiCards = document.querySelectorAll('.testi-card');
-const testiControls = document.getElementById('testiControls');
-let testiIndex = 0;
-function testiVisible(){ return window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3; }
-function testiMax(){ return Math.max(0, testiCards.length - testiVisible()); }
-function buildDots(){
-  testiControls.innerHTML = '';
-  for(let i=0;i<=testiMax();i++){
-    const d = document.createElement('button');
-    d.className = 'testi-dot' + (i===testiIndex ? ' active':'');
-    d.setAttribute('aria-label','Go to testimonial set '+(i+1));
-    d.addEventListener('click', () => { testiIndex = i; updateTesti(); });
-    testiControls.appendChild(d);
-  }
-}
-function updateTesti(){
-  const cardWidth = testiCards[0].getBoundingClientRect().width + 24;
-  testiTrack.style.transform = `translateX(-${testiIndex*cardWidth}px)`;
-  [...testiControls.children].forEach((d,i) => d.classList.toggle('active', i===testiIndex));
-}
-buildDots();
-let testiTimer = setInterval(() => {
-  testiIndex = testiIndex >= testiMax() ? 0 : testiIndex+1;
-  updateTesti();
-}, 4500);
-window.addEventListener('resize', () => { testiIndex = 0; buildDots(); updateTesti(); });
-
 // ===== TIMELINE STEP HIGHLIGHT =====
 const steps = document.querySelectorAll('.t-step');
 const stepIO = new IntersectionObserver((entries) => {
@@ -1545,10 +1518,12 @@ document.querySelectorAll('.faq-item').forEach(item => {
     document.querySelectorAll('.faq-item').forEach(i => {
       i.classList.remove('open');
       i.querySelector('.faq-a').style.maxHeight = null;
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
     });
     if(!isOpen){
       item.classList.add('open');
       a.style.maxHeight = a.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
     }
   });
 });
